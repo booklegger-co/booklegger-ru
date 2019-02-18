@@ -1,0 +1,48 @@
+	.style01 {
+		margin-top: 1.8em;
+		margin-left: -0.2em;
+		border-color: #5ab889;
+		color: #5cbf8e;
+	}
+
+	.icon2 {
+		text-decoration: none;
+		position: relative;
+		font-size: 3em;
+		vertical-align: center;
+	}
+
+		.icon2:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+			/*margin:0px;*/
+		}
+
+		.icon2 > .label {
+			display: none;
+		}
+
+
+	.upload {
+		width: 100%;
+		margin-top:2em;
+		background: rgba(29, 39, 38, 0.8);
+		border-color: #5ecb96;
+		border-width: 1px;
+		border-style: double dashed;
+		padding: 4em 0 3.5em 0;
+	}
+
+		.upload:hover {
+/*			background-color: #283634;
+			background: rgba(29, 39, 38, 0.6);*/
+		}
+
+input[type="text"].invalid {
+	color: #f72870;
+	/*border-color: inherit;*/
+}
