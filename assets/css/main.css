@@ -1,5 +1,5 @@
 @import url("font-awesome.min.css");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,600,300italic,600italic");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600,300italic,600italic");
 
 /* Reset */
 
@@ -139,23 +139,13 @@
 
 	@media screen and (max-width: 1680px) {
 
-/*		.container.\31 25\25 {
-			width: 100%;
-			max-width: 1350px;
-			min-width: 1080px;
+		.container {
+			width: 1080px;
 		}
 
-		.container.\37 5\25 {
-			width: 810px;
-		}
+	}
 
-		.container.\35 0\25 {
-			width: 540px;
-		}
-
-		.container.\32 5\25 {
-			width: 270px;
-		}*/
+	@media screen and (max-width: 1680px) {
 
 		.container {
 			width: 1080px;
@@ -163,30 +153,53 @@
 
 	}
 
-	@media screen and (max-width: 1280px) {
-
-/*		.container.\31 25\25 {
-			width: 100%;
-			max-width: 1200px;
-			min-width: 960px;
-		}
-
-		.container.\37 5\25 {
-			width: 720px;
-		}
-
-		.container.\35 0\25 {
-			width: 480px;
-		}
-
-		.container.\32 5\25 {
-			width: 240px;
-		}*/
+	@media screen and (max-width: 1023) {
 
 		.container {
 			width: 960px;
 		}
+	}
 
+	@media screen and (max-width: 480) {
+
+		.container {
+			width: 100vw;
+		}
+	}
+
+	@media screen and (max-width: 414) {
+
+		.container {
+			width: 100vw;
+		}
+	}
+
+	@media screen and (max-width: 412) {
+
+		.container {
+			width: 100vw;
+		}
+	}
+
+	@media screen and (max-width: 375) {
+
+		.container {
+			width: 100vw;
+		}
+	}
+
+	@media screen and (max-width: 360) {
+
+		.container {
+			width: 100vw;
+		}
+	}
+
+	@media screen and (max-width: 320) {
+
+		.container {
+			width: 100vw;
+		}
 	}
 
 /* Form */
@@ -852,7 +865,7 @@
 	#banner {
 		background-color: #f6f6f6;
 		background-attachment: scroll, fixed;
-		background-image: url("../../images/overlay.png"), url("../../images/banner.jpg");
+		background-image: url("../../images/overlay.png"), url("../../images/banner.png");
 		background-position: top left,							center center;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								cover;
@@ -1469,49 +1482,37 @@
 
 		/* Basic */
 
-			body, input, select, textarea {
-				font-size: 11pt;
-			}
+			.phone {
+		        display: block !important;
+		    }
+
+		body, input, select, textarea {
+			font-size: 11pt;
+		}
+
+		#banner .inner p {
+			font-size: 11pt;
+		}
 
 	}
 
 /* Normal */
 
-	@media screen and (max-width: 1280px) {
+	@media screen and (max-width: 1023px) {
 
 		/* Basic */
-
-			body, input, select, textarea {
-				font-size: 11pt;
-			}
-
 
 			header.major {
 				margin: 1em 0 0 0;
 			}
 
-		/* Feature */
+		body, input, select, textarea {
+			font-size: 10pt;
+		}
 
-			.feature {
-				padding-left: 7em;
-			}
-
-				.feature i {
-					height: 5em;
-					line-height: 4.75em;
-					margin-top: 0;
-					width: 5em;
-				}
-
-					.feature i:before {
-						font-size: 32px;
-					}
-
-		/* Wrapper */
-
-			.wrapper {
-				padding: 4em 0 2em 0;
-			}
+			.phone {
+		        display: none !important;
+		    }
 
 		/* Banner */
 
@@ -1520,34 +1521,145 @@
 				padding: 8em 0;
 			}
 
-				#banner .inner {
-					padding: 3em 4em;
-				}
+			#banner .inner p {
+				font-size: 10pt;
+			}
 
-					#banner .inner h2 {
-						font-size: 2.25em;
-					}
+			#banner .inner h2 {
+				font-size: 2.25em;
+			}
 
 		/* Main */
 
 			#main {
 				padding: 2em 0;
 			}
-
-
-		/* Search */
-
-			#search .inner {
-				margin-top: 0em;
-				padding-right: 4em;
-			}
-
-			#search .device {
-				border-width: 35px;
-			}
-
-				#search .device:after {
-					margin-top: -22px;
-				}
-
 	}
+
+/* Short */
+	@media screen and (max-width: 767px) {
+
+		@media screen and (max-height: 896px) {
+			body, input, select, textarea {
+				font-size: 9pt;
+			}
+
+			#banner .inner p {
+				font-size: 9pt;
+			}
+
+			#banner .inner {
+				padding: 4em 3em 4em 3em;
+			}
+
+			#banner {
+				background-attachment: scroll;
+				padding: 7em 0;
+			}
+		}
+
+
+		@media screen and (max-height: 667px) {
+			body, input, select, textarea {
+				font-size: 8pt;
+			}
+
+			#banner .inner p {
+				font-size: 8pt;
+			}
+
+			#banner .inner {
+				padding: 4em 5em 4em 5em;
+			}
+
+			#banner {
+				background-attachment: scroll;
+				padding: 6em 0;
+			}
+		}
+
+		@media screen and (max-height: 568px) {
+			body, input, select, textarea {
+				font-size: 8pt;
+			}
+
+			#banner .inner p {
+				font-size: 8pt;
+			}
+
+			#banner .inner {
+				padding: 4em 5em 4em 5em;
+			}
+
+			#banner {
+				background-attachment: scroll;
+				padding: 5em 0;
+			}
+		}
+
+		/* Basic */
+
+			header.major {
+				margin: 1em 0 0 0;
+			}
+
+			.phone {
+		        display: none !important;
+		    }
+
+
+			#banner .inner h2 {
+				font-size: 2em;
+			}
+
+		/* Main */
+
+			#main {
+				padding: 2em 0;
+			}
+	}
+
+	@media screen and (max-width: 320px) {
+
+		@media screen and (max-height: 568px) {
+			body, input, select, textarea {
+				font-size: 8pt;
+			}
+
+			#banner .inner p {
+				font-size: 8pt;
+			}
+
+			#banner .inner {
+				padding: 4em 3em 4em 3em;
+			}
+
+			#banner {
+				background-attachment: scroll;
+				padding: 3em 0;
+			}
+		}
+
+
+		/* Basic */
+
+			header.major {
+				margin: 1em 0 0 0;
+			}
+
+			.phone {
+		        display: none !important;
+		    }
+
+
+			#banner .inner h2 {
+				font-size: 2em;
+			}
+
+		/* Main */
+
+			#main {
+				padding: 2em 0;
+			}
+	}
+

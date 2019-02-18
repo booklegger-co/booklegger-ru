@@ -10,6 +10,57 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
+		<script type="text/javascript">
+		  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+		  ;r.type="text/javascript";r.async=true
+		  ;r.src="https://cdn.amplitude.com/libs/amplitude-4.4.0-min.gz.js"
+		  ;r.onload=function(){if(e.amplitude.runQueuedFunctions){
+		  e.amplitude.runQueuedFunctions()}else{
+		  console.log("[Amplitude] Error: could not load SDK")}}
+		  ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+		  ;function s(e,t){e.prototype[t]=function(){
+		  this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+		  var o=function(){this._q=[];return this}
+		  ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+		  ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+		  ;return this}
+		  ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+		  ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+		  ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+		  ;function v(e){function t(t){e[t]=function(){
+		  e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+		  for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+		  e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+		  ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+		  ;e.amplitude=n})(window,document);
+
+		  amplitude.getInstance().init("ed6cf68ce11fd05df7e27b9966c20c3a");
+		</script>
+
+		<script>
+
+		var version = '1.0.0';
+		var language = 'ru';
+		var link_vk_href = 'http://vk.com/booklegger';
+
+		function logOpenPage() {
+			var date = new Date();
+			var identify = new amplitude
+				.Identify()
+				.setOnce('promo_page_open_date', date)
+				.setOnce('promo_page_language', language)
+				.setOnce('promo_page_version', version);
+			amplitude.getInstance().identify(identify);
+			amplitude.getInstance().logEvent('promo_page_view', { 'date': date, 'language': language, 'version': version });
+		}
+
+		function logGoVK() {
+			var date = new Date()
+			amplitude.getInstance().logEvent('open_vk_link', { 'date': date, 'language': language, 'version': version, 'link': link_vk_href });
+		}
+
+		</script>
+
 	</head>
 	<body>
 		<div id="page-wrapper">
@@ -19,23 +70,21 @@
 			<section id="banner">
 				<div class="inner">
 
-					<div class="abtest" >
+					<div class="right" >
 						<h2>Booklegger</h2>
 
-						<p class="line abtest">Находи книги, трогай странички, вдыхай запах, </br/>читай отрывки в книжном, но покупай в интернете!</p>
+						<p class="line right">Находи книги, трогай странички, вдыхай запах, </br/>читай отрывки в книжном, но покупай в интернете!</p>
 
-						<p class="line abtest" >Просто поднеси смартфон к понравивщейся книге, <br/>чтобы быстро сравнить цены или найти электронную версию.</p>
+						<p class="line right" >Просто поднеси смартфон к понравивщейся книге, <br/>чтобы быстро сравнить цены или найти электронную версию.</p>
 
-						<p class="line abtest">Скоро появится такое приложение. <a href="http://vk.com/booklegger" target="_blank">Подпишись на наш паблик</a><br/>и мы сообщим, как только оно будет опубликовано.</p>
+						<p class="line right">Скоро появится такое приложение. <a id="link_vk" onclick="logGoVK()" target="_blank">Подпишись на наш паблик</a><br/>и мы сообщим, как только оно будет опубликовано.</p>
 
 					</div>
 
-					<div class="image phone abtest">
+					<div class="image phone right">
 						<div id="cycler" class="inner1">
 							<img class="active" src="images/screen.png" />
-							<img src="images/screen_barcode.png" />	
-							<img src="images/screen.png" />	
-							<img src="images/screen_isbn.png" />		
+							<img src="images/screen_barcode.png" />		
 						</div>
 					</div>
 					
@@ -56,5 +105,10 @@
 		<script src="assets/js/booklegger.js"></script>
 		<script src="assets/js/crossfade.js"></script>
 		<script src="assets/js/abtest.js"></script>
+
+			<script>
+				document.getElementById("link_vk").href=link_vk_href; 
+				logOpenPage();
+			</script>
 	</body>
 </html>
