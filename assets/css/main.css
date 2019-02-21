@@ -1588,6 +1588,25 @@
 			}
 		}
 
+		@media screen and (max-height: 340px) {
+			body, input, select, textarea {
+				font-size: 8pt;
+			}
+
+			#banner .inner p {
+				font-size: 8pt;
+			}
+
+			#banner .inner {
+				padding: 1em 5em 1em 5em;
+			}
+
+			#banner {
+				background-attachment: scroll;
+				padding: 0.5em 0;
+			}
+		}
+
 		/* Basic */
 
 			header.major {
