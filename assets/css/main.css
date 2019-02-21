@@ -137,13 +137,6 @@
 		width: 12
 	}*/
 
-	@media screen and (max-width: 1680px) {
-
-		.container {
-			width: 1080px;
-		}
-
-	}
 
 	@media screen and (max-width: 1680px) {
 
@@ -1474,11 +1467,9 @@
 					 .icons p a:hover {
 						color: #fff;
 					}
-
-
 /* Wide */
 
-	@media screen and (max-width: 1680px) {
+	@media screen {
 
 		/* Basic */
 
